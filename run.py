@@ -12,16 +12,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('pizza_python')
 
-sales = SHEET.worksheet("sales")
-
-data = sales.get_all_values()
-
-sales.update_title("product")
+purchase = SHEET.worksheet("purchase")
+data = purchase.get_all_values()
 
 print(data)
-
-
-
-
-
-
